@@ -1,0 +1,26 @@
+﻿Alias name: upload
+Creation date: 23-Dec-2025
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Niranjan Reddy, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+Issuer: CN=Niranjan Reddy, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
+Serial number: b4df79f328783a1
+Valid from: Tue Dec 23 23:26:11 IST 2025 until: Sat May 10 23:26:11 IST 2053
+Certificate fingerprints:
+	 SHA1: EF:8D:47:23:8C:DF:7D:31:F5:DD:3B:12:12:BE:E4:9F:81:81:85:0B
+	 SHA256: A8:5C:DC:A2:74:CB:30:A3:11:1B:F8:E9:44:2B:8C:00:21:F9:43:67:CC:E7:89:38:54:81:8D:E2:31:AA:F6:83
+Signature algorithm name: SHA384withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 05 8E 4D 98 00 96 F7 A0   D4 4A 06 B5 04 36 60 26  ..M......J...6`&
+0010: DD EB 04 DC                                        ....
+]
+]
+

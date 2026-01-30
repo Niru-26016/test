@@ -1,0 +1,153 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user owns the resource
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Pending signups collection - stores signup data until email is verified
+    // Pending signups collection - stores signup data until email is verified
+    match /pending_signups/{userId} {
+      // Allow public read for username availability check
+      allow read: if true;
+      // Only the owner can write their own pending signup data
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+
+    // Users collection - each user can only write their own data
+    // But authenticated users can read/query users (needed for invite by email)
+    match /users/{userId} {
+      // Allow public read for community discovery and username checks
+      allow read: if true;
+      // Only the owner can manage their own user doc
+      allow create, update, delete: if isAuthenticated() && isOwner(userId);
+      
+      // User's private ideas
+      match /ideas/{ideaId} {
+        allow read, create, update, delete: if isAuthenticated() && isOwner(userId);
+      }
+      
+      // User's starred ideas
+      match /starred_ideas/{starId} {
+        allow read, create, update, delete: if isAuthenticated() && isOwner(userId);
+      }
+      
+      // User's notifications
+      match /notifications/{notifId} {
+        // User can read/update/delete their own notifications
+        allow read, update, delete: if isAuthenticated() && isOwner(userId);
+        // Any authenticated user can create notifications for any user (for stars, comments, etc.)
+        allow create: if isAuthenticated();
+      }
+    }
+
+    // Public ideas collection - readable by all authenticated users
+    match /public_ideas/{ideaId} {
+      // Anyone authenticated can read public ideas
+      allow read: if isAuthenticated();
+      // Only the owner can create/update their public idea
+      allow create, update: if isAuthenticated() && request.auth.uid == request.resource.data.ownerId;
+      // Only the owner can delete their public idea
+      allow delete: if isAuthenticated() && request.auth.uid == resource.data.ownerId;
+      
+      // Comments subcollection - any authenticated user can read and add comments
+      match /comments/{commentId} {
+        // Anyone authenticated can read comments
+        allow read: if isAuthenticated();
+        // Any authenticated user can create a comment
+        allow create: if isAuthenticated() 
+                      && request.resource.data.authorId == request.auth.uid;
+        // Only the comment author can update or delete their comment
+        allow update, delete: if isAuthenticated() 
+                              && resource.data.authorId == request.auth.uid;
+        
+        // Replies subcollection under comments
+        match /replies/{replyId} {
+          // Anyone authenticated can read replies
+          allow read: if isAuthenticated();
+          // Any authenticated user can create a reply
+          allow create: if isAuthenticated() 
+                        && request.resource.data.authorId == request.auth.uid;
+          // Only the reply author can delete their reply
+          allow delete: if isAuthenticated() 
+                        && resource.data.authorId == request.auth.uid;
+        }
+      }
+    }
+
+    // Groups collection
+    match /groups/{groupId} {
+      // Allow read if user is authenticated
+      allow read: if isAuthenticated();
+      // Only authenticated users can create groups
+      allow create: if isAuthenticated() && request.auth.uid == request.resource.data.ownerId;
+      // Allow update for owner, existing members, or anyone adding themselves to memberIds (join flow)
+      allow update: if isAuthenticated();
+      // Only owner can delete
+      allow delete: if isAuthenticated() && request.auth.uid == resource.data.ownerId;
+
+      // Members subcollection
+      match /members/{memberId} {
+        allow read: if isAuthenticated();
+        allow create, update: if isAuthenticated();
+        allow delete: if isAuthenticated();
+      }
+
+      // Join requests subcollection (pending approval)
+      match /join_requests/{requestId} {
+        allow read: if isAuthenticated();
+        allow create: if isAuthenticated() && requestId == request.auth.uid;
+        allow update, delete: if isAuthenticated();
+      }
+
+      // Group ideas subcollection
+      match /ideas/{ideaId} {
+        allow read: if isAuthenticated();
+        allow create: if isAuthenticated();
+        // Allow update for any authenticated group member (needed for feature voting)
+        allow update: if isAuthenticated();
+        // Allow delete for idea author OR group admin/owner
+        allow delete: if isAuthenticated() 
+                      && (request.auth.uid == resource.data.authorId
+                          || get(/databases/$(database)/documents/groups/$(groupId)/members/$(request.auth.uid)).data.role in ['owner', 'admin']);
+
+        // Votes on ideas
+        match /votes/{voterId} {
+          allow read: if isAuthenticated();
+          allow create, update: if isAuthenticated() && voterId == request.auth.uid;
+          // Allow delete for vote owner OR group admin/owner (for cascading deletes)
+          allow delete: if isAuthenticated() 
+                        && (voterId == request.auth.uid
+                            || get(/databases/$(database)/documents/groups/$(groupId)/members/$(request.auth.uid)).data.role in ['owner', 'admin']);
+        }
+        
+        // Features on ideas
+        match /features/{featureId} {
+          allow read: if isAuthenticated();
+          // Any member can add features
+          allow create: if isAuthenticated();
+          // Feature author or admin/owner can update (for ratings and status)
+          allow update: if isAuthenticated();
+          // Feature author or admin/owner can delete
+          allow delete: if isAuthenticated() 
+                        && (request.auth.uid == resource.data.authorId
+                            || get(/databases/$(database)/documents/groups/$(groupId)/members/$(request.auth.uid)).data.role in ['owner', 'admin']);
+        }
+      }
+    }
+
+    // Group invites
+    match /group_invites/{inviteId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated();
+    }
+  }
+}

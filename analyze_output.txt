@@ -1,0 +1,85 @@
+﻿Analyzing Idex...                                               
+
+warning - The declaration '_copyInviteCode' isn't referenced - lib\screens\group_detail_screen.dart:159:8 - unused_element
+warning - The declaration '_showVoteDialog' isn't referenced - lib\screens\group_detail_screen.dart:357:8 - unused_element
+   info - Unnecessary 'const' keyword - lib\screens\group_idea_detail_screen.dart:394:25 - unnecessary_const
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\group_idea_detail_screen.dart:552:42 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\groups_list_screen.dart:68:40 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\groups_list_screen.dart:73:21 - use_build_context_synchronously
+   info - Don't invoke 'print' in production code - lib\screens\home_screen.dart:58:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\screens\home_screen.dart:197:13 - avoid_print
+   info - Don't invoke 'print' in production code - lib\screens\home_screen.dart:329:15 - avoid_print
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\idea_detail_screen.dart:327:27 - use_build_context_synchronously
+   info - Unnecessary use of multiple underscores - lib\screens\idea_detail_screen.dart:733:29 - unnecessary_underscores
+   info - Unnecessary use of multiple underscores - lib\screens\idea_detail_screen.dart:1196:49 - unnecessary_underscores
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\screens\idea_form_screen.dart:143:41 - deprecated_member_use
+   info - Don't invoke 'print' in production code - lib\screens\profile_screen.dart:32:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\screens\profile_screen.dart:35:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\screens\profile_screen.dart:39:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\screens\profile_screen.dart:43:7 - avoid_print
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\profile_screen.dart:153:31 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps, guarded by an unrelated 'mounted' check - lib\screens\profile_screen.dart:155:38 - use_build_context_synchronously
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:309:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:311:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:314:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:323:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:324:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:327:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:331:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:332:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\auth_service.dart:357:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:175:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:190:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:194:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:201:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:203:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:233:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:237:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\comments_service.dart:240:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:37:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:57:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:71:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:79:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:93:11 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:143:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:146:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:155:11 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:161:15 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:165:15 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:167:15 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:173:11 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:541:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:547:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:554:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:565:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:595:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:598:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:607:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:612:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:624:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:631:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:634:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:637:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:648:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:651:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:656:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:659:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:665:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:667:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:670:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:671:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:680:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\groups_service.dart:682:7 - avoid_print
+   info - Statements in an if should be enclosed in a block - lib\services\notifications_service.dart:157:7 - curly_braces_in_flow_control_structures
+
+flutter : 71 issues found. (ran in 2.7s)
+At line:1 char:1
++ flutter analyze 2>&1 | Out-File 
+-FilePath analyze_output.txt -Encodin ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified 
+   : (71 issues found. (ran in 2.7s):Stri  
+  ng) [], RemoteException
+    + FullyQualifiedErrorId : NativeComman 
+   dError
+ 

@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "316394099784",
+    "project_id": "idex-01",
+    "storage_bucket": "idex-01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316394099784:android:5ada23b78654b6f58eb47d",
+        "android_client_info": {
+          "package_name": "com.niranjan.idex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316394099784-giroeic8796bbsvr0mh32i0dlvcu0jih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.niranjan.idex",
+            "certificate_hash": "984cb53ab36b45c845fdc8a7b97eea474bb73ffc"
+          }
+        },
+        {
+          "client_id": "316394099784-javfd1vbm6uspl8sphd4joe6ifj2br0q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.niranjan.idex",
+            "certificate_hash": "2b652753f62035ce6a0238bb88888898dcddc72b"
+          }
+        },
+        {
+          "client_id": "316394099784-jsr8ma7moqplclc75difv65i9ofb41g9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.niranjan.idex",
+            "certificate_hash": "ef8d47238cdf7d31f5dd3b1212bee49f8181850b"
+          }
+        },
+        {
+          "client_id": "316394099784-d7n6hkaa7j8dkklruamb4u5ovubef8aq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR02eveH7vSVO5c9PinmoDprq4K9AeCmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316394099784-d7n6hkaa7j8dkklruamb4u5ovubef8aq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

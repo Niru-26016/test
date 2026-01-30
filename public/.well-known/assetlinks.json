@@ -1,0 +1,16 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.niranjan.idex",
+            "sha256_cert_fingerprints": [
+                "7D:F6:DF:2B:5C:DD:04:AE:E6:DB:EF:DF:21:A0:21:5B:31:3E:DB:D8:A4:DE:28:E9:CA:3A:2B:88:FB:AF:9B:52",
+                "A8:5C:DC:A2:74:CB:30:A3:11:1B:F8:E9:44:2B:8C:00:21:F9:43:67:CC:E7:89:38:54:81:8D:E2:31:AA:F6:83",
+                "A7:0C:C2:32:C7:5D:2C:48:5C:DB:56:01:66:7A:91:AC:CA:06:63:12:7A:DF:CE:CF:94:AF:50:5D:7B:6A:14:66"
+            ]
+        }
+    }
+]
